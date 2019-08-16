@@ -37,7 +37,6 @@ $BaitFisher_Path/BaitFilter-v1.0.6 -i prefil_baits.txt --blast-first-hit-evalue 
 $BaitFisher_Path/BaitFilter-v1.0.6 -i baits_filtered_by_blast-l -c four-column-upload -o prefasta.txt 1> finalstats.txt
 #Reformat bait seqs as Fasta
 python3 $BaitFisherHelper_Path/BaitFisherCleaner.py -in prefasta.txt -out raw_baits.fasta
-grep ">" raw_baits.fasta | wc -l
 #Run dustmasker to identify low complexity regions
 dustmasker -in raw_baits.fasta -out dusted_baits.fasta -outfmt 'fasta'
 
